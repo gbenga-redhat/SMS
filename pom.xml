@@ -14,8 +14,7 @@
 
     <!-- jar packaging-->
     <packaging>jar</packaging>
-
-
+    
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -38,24 +37,6 @@
     </dependencies>
 
     <build>
-        <!-- build executatble jar file
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>com.sms.SMSApp</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-    </plugins>
--->
-
-
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -63,8 +44,5 @@
                 <version>1.5.8.RELEASE</version>
             </plugin>
         </plugins>
-</build>
-
-
-
+    </build>
 </project>
