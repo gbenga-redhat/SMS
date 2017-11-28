@@ -8,6 +8,9 @@ public class SMS {
     private String timeStamp;
     private String text;
 
+    public SMS() {
+    }
+    
     public SMS(Integer id, String createdTimeStamp, String timeStamp, String text) {
         this.id = id;
         this.createdTimeStamp = createdTimeStamp;
