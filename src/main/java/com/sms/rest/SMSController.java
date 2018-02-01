@@ -35,7 +35,7 @@ public class SMSController {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World Pipeline!";
+        return "Hello World Pipeline!";erer
     }
 
     @RequestMapping(value="/sms/v2/{id}", method=RequestMethod.GET, produces="application/json")
