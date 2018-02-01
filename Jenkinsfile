@@ -4,10 +4,7 @@ pipeline {
   //          image 'maven:3-alpine' 
   //          args '-v /root/.m2:/root/.m2' 
   //      }
-          node {
-                 label 'label'
-                 customWorkspace '~/jenkins'
-           }
+          any
     }
     stages {
         stage('Build') { 
