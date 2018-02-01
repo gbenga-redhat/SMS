@@ -14,7 +14,8 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh 'mvn spring-boot:run -Dserver.port=8888' 
+              //  sh 'mvn spring-boot:run -Dserver.port=8888' 
+              sh '/jenkins/scripts/deploysms.sh'
             }
         }
     }
