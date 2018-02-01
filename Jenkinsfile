@@ -12,5 +12,10 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
+        stage('Deploy') { 
+            steps {
+                sh 'spring-boot:run -Dserver.port=8888' 
+            }
+        }
     }
 }
