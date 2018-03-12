@@ -53,6 +53,7 @@
     },
     "/sms/v2/{id}": {
       "get": {
+        "summary": "SMS Retrieve",
         "description": "Retrieve a specific SMS",
         "operationId": "sms_get_with_params",
         "produces": [
@@ -94,6 +95,7 @@
         }
       },
       "put": {
+        "summary": "SMS Update",
         "description": "Update a specific SMS",
         "parameters": [
           {
@@ -108,7 +110,8 @@
             "in": "query",
             "description": "Your API access key",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "x-data-threescale-name": "user_keys"
           },
           {
             "name": "body",
@@ -124,6 +127,7 @@
         }
       },
       "delete": {
+        "summary": "SMS Delete",
         "description": "Delete a specific SMS",
         "parameters": [
           {
@@ -138,7 +142,8 @@
             "in": "query",
             "description": "Your API access key",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "x-data-threescale-name": "user_keys"
           }
         ],
         "responses": {
@@ -157,6 +162,7 @@
     },
     "/sms/v2": {
       "post": {
+        "summary": "SMS Create",
         "description": "Create an SMS",
         "parameters": [
           {
@@ -171,7 +177,9 @@
             "name": "user_key",
             "in": "query",
             "description": "Your API Access Key",
-            "type": "string"
+            "required": true,
+            "type": "string",
+            "x-data-threescale-name": "user_keys"
           }
         ],
         "responses": {
