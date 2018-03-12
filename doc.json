@@ -1,0 +1,231 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SMS Master API",
+    "description": "SMS Master API",
+    "version": "1.0.0"
+  },
+  "host": "sms-3scale-apicast.apps.rhsademo.net",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "SMS Hello",
+        "description": "SMS API with no parameters",
+        "operationId": "sms_no_params",
+        "produces": [
+          "text/string"
+        ],
+        "parameters": [
+          {
+            "name": "user_key",
+            "in": "query",
+            "description": "Your API access key",
+            "required": true,
+            "type": "string",
+            "x-data-threescale-name": "user_keys"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response",
+            "schema": {
+              "$ref": "#/definitions/StringResponseModel"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      }
+    },
+    "/sms/v2/{id}": {
+      "get": {
+        "description": "Retrieve a specific SMS",
+        "operationId": "sms_get_with_params",
+        "produces": [
+          "application/json",
+          "application/xml",
+          "text/xml",
+          "text/html"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the text to be retrieved",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_key",
+            "in": "query",
+            "description": "Your API access key",
+            "required": true,
+            "type": "string",
+            "x-data-threescale-name": "user_keys"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response",
+            "schema": {
+              "$ref": "#/definitions/ResponseModel"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Update a specific SMS",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the text to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_key",
+            "in": "query",
+            "description": "Your API access key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Request",
+            "schema": {
+              "$ref": "#/definitions/ResponseModel"
+            }
+          }
+        ],
+        "responses": {
+          "204": {}
+        }
+      },
+      "delete": {
+        "description": "Delete a specific SMS",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the text to be deleted",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_key",
+            "in": "query",
+            "description": "Your API access key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {}
+        }
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "SMS ID",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/sms/v2": {
+      "post": {
+        "description": "Create an SMS",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Request",
+            "schema": {
+              "$ref": "#/definitions/ResponseModel"
+            }
+          },
+          {
+            "name": "user_key",
+            "in": "query",
+            "description": "Your API Access Key",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {}
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ResponseModel": {
+      "required": [
+        "id",
+        "timeStamp",
+        "text",
+        "createdTimeStamp"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The ID of the SMS",
+          "type": "integer"
+        },
+        "createdTimeStamp": {
+          "description": "Time the SMS was created",
+          "type": "string"
+        },
+        "timeStamp": {
+          "description": "current timestamp of the SMS",
+          "type": "string"
+        },
+        "text": {
+          "description": "The Text of the SMS",
+          "type": "string"
+        }
+      }
+    },
+    "StringResponseModel": {
+      "type": "string"
+    },
+    "ErrorModel": {
+      "required": [
+        "code",
+        "message"
+      ],
+      "type": "object",
+      "properties": {
+        "code": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
