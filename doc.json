@@ -3,6 +3,10 @@
   "info": {
     "title": "SMS Master API",
     "description": "SMS Master API",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
     "version": "1.0.0"
   },
   "host": "sms-3scale-apicast.apps.rhsademo.net",
