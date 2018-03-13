@@ -123,7 +123,12 @@
           }
         ],
         "responses": {
-          "204": {}
+          "204": {
+            "description": "PUT response",
+            "schema": {
+              "$ref": "#/definitions/ResponseModel"
+            }
+          }
         }
       },
       "delete": {
@@ -147,7 +152,12 @@
           }
         ],
         "responses": {
-          "204": {}
+          "204": {
+            "description": "Delete Response",
+            "schema": {
+              "$ref": "#/definitions/StringResponseModel"
+            }
+          }
         }
       },
       "parameters": [
@@ -183,7 +193,12 @@
           }
         ],
         "responses": {
-          "201": {}
+          "201": {
+            "description": "POST Response",
+            "schema": {
+              "$ref": "#/definitions/ResponseModel"
+            }
+          }
         }
       }
     }
