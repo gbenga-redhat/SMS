@@ -86,7 +86,7 @@ oc scale dc apicast --replicas=1
 echo "-->Waiting for apicast to boot"
 testpods
 # apicast has a liveness/readiness probe but going to wait a bit more
-sleep 15
+#sleep 15
 
 
 echo "--> Attempt a GET before SMS is up to force a 5XX call"
@@ -95,12 +95,16 @@ getLoop https://sms-3scale-apicast.apps.rhsademo.net:443  20cd0d18260b1b480d7421
 echo "-->Bringing up sms pod"
 oc project sms
 
+echo "--->set liveness and readiness probes in case they are missing"
+#oc set probe dc/sms --liveness --get-url=http://:8080/
+#oc set probe dc/sms --readiness --get-url=http://:8080/
+#sleep 1
 oc scale dc sms --replicas=1 
 
 echo "-->Waiting for sms to boot"
-testpods
+#testpods
 # need a liveness/readiness proble but don't have one..going to wait a bit more
-sleep 30
+sleep 60
 
 
 echo "--> Healthcheck testing 3scale API gateway/backend"
