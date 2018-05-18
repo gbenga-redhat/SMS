@@ -97,7 +97,7 @@ paths:
           schema:
             $ref: '#/definitions/ResponseModel'
     delete:
-      summary: SMS Delete
+      summary: Delete SMS Message
       description: Delete a specific SMS message
       parameters:
       - name: id
