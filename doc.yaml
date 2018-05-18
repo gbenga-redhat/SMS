@@ -2,7 +2,7 @@
 swagger: 2.0
 info:
   title: SMS Master API
-  description: SMS Master API
+  description: SMS Text Messaging Demo API
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
