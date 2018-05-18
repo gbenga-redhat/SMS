@@ -23,7 +23,7 @@
   "paths": {
     "/": {
       "get": {
-        "summary": "SMS Hello",
+        "summary": "SMS HealthCheck (\"Hello\")",
         "description": "SMS API with no parameters",
         "operationId": "sms_no_params",
         "produces": [
@@ -57,8 +57,8 @@
     },
     "/sms/v2/{id}": {
       "get": {
-        "summary": "SMS Retrieve",
-        "description": "Retrieve a specific SMS",
+        "summary": "View SMS message",
+        "description": "View a specific SMS message\n",
         "operationId": "sms_get_with_params",
         "produces": [
           "application/json",
@@ -99,8 +99,8 @@
         }
       },
       "put": {
-        "summary": "SMS Update",
-        "description": "Update a specific SMS",
+        "summary": "Update SMS message",
+        "description": "Update a specific SMS message",
         "parameters": [
           {
             "name": "id",
@@ -137,7 +137,7 @@
       },
       "delete": {
         "summary": "SMS Delete",
-        "description": "Delete a specific SMS",
+        "description": "Delete a specific SMS message",
         "parameters": [
           {
             "name": "id",
@@ -176,8 +176,8 @@
     },
     "/sms/v2": {
       "post": {
-        "summary": "SMS Create",
-        "description": "Create an SMS",
+        "summary": "Create an SMS message",
+        "description": "Create an SMS ",
         "parameters": [
           {
             "name": "body",
