@@ -18,7 +18,7 @@ produces:
 paths:
   /:
     get:
-      summary: SMS Hello
+      summary: SMS HealthCheck ("Hello")
       description: SMS API with no parameters
       operationId: sms_no_params
       produces:
@@ -41,8 +41,9 @@ paths:
             $ref: '#/definitions/ErrorModel'
   /sms/v2/{id}:
     get:
-      summary: SMS Retrieve
-      description: Retrieve a specific SMS
+      summary: View SMS message
+      description: |
+        View a specific SMS message
       operationId: sms_get_with_params
       produces:
       - application/json
@@ -71,8 +72,8 @@ paths:
           schema:
             $ref: '#/definitions/ErrorModel'
     put:
-      summary: SMS Update
-      description: Update a specific SMS
+      summary: Update SMS message
+      description: Update a specific SMS message
       parameters:
       - name: id
         in: path
@@ -97,7 +98,7 @@ paths:
             $ref: '#/definitions/ResponseModel'
     delete:
       summary: SMS Delete
-      description: Delete a specific SMS
+      description: Delete a specific SMS message
       parameters:
       - name: id
         in: path
@@ -123,8 +124,8 @@ paths:
       type: integer
   /sms/v2:
     post:
-      summary: SMS Create
-      description: Create an SMS
+      summary: Create an SMS message
+      description: 'Create an SMS '
       parameters:
       - name: body
         in: body
