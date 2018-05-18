@@ -136,7 +136,7 @@
         }
       },
       "delete": {
-        "summary": "SMS Delete",
+        "summary": "Delete SMS Message",
         "description": "Delete a specific SMS message",
         "parameters": [
           {
