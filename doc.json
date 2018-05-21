@@ -163,16 +163,7 @@
             }
           }
         }
-      },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "SMS ID",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      }
     },
     "/sms/v2": {
       "post": {
