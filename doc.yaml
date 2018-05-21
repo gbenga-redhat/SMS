@@ -116,12 +116,6 @@ paths:
           description: Delete Response
           schema:
             $ref: '#/definitions/StringResponseModel'
-    parameters:
-    - name: id
-      in: path
-      description: SMS ID
-      required: true
-      type: integer
   /sms/v2:
     post:
       summary: Create an SMS message
